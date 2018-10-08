@@ -64,7 +64,7 @@ decompresspdf() {
 # remove the link from the decompressed pdf file
 cleanpdf() {
     echo "Removing the url $URL from the file $FILE"
-    $CMD2 "s/$URL/ /g" <$STAGE1.pdf >$STAGE2.pdf
+    $CMD2 's/"${URL}"/ /g' <$STAGE1.pdf >$STAGE2.pdf
     if [ $? -eq 0 ]
     then
         echo "Successfully removed the url from pdf file."
