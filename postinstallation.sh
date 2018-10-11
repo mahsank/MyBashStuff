@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # This script sets up rpmfusion repositories and performs installation of
-# various softwares on a newly installed fedora system. Installation is divided
-# into various groups such as development, education, graphics and utils etc.
-# It is possible to install all the groups at once by passing the agrument
-# 'all' to the script. The script may terminate prematurely if the named
-# package doesn't exist in rpmfusion repository. This is not a problem with the
-# script but the way dnf behaves when you try to install multiple packages and
-# one of the package name is not found in the repository. I wrote this script
-# for as per my own requirements, feel free to modify it as per your
-# requirements
+# various softwares on a newly installed fedora kde system. Installation is
+# divided into various groups such as development, education, graphics and
+# utils etc. It is possible to install all the groups at once by passing the
+# agrument 'all' to the script. The script may terminate prematurely if the
+# named package doesn't exist in rpmfusion repository. This is not a problem
+# with the script but the way dnf behaves when you try to install multiple
+# packages and one of the package name is not found in the repository. I wrote
+# this script for as per my own requirements, feel free to modify it as per
+# your requirements
 
 
 if [ $UID -ne 0 ]
