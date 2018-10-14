@@ -10,12 +10,15 @@ usage() {
 }
 
 # check if the number of arguments is correct
-if [ $# -ne 2 ]
-then
-    echo "The script needs a pdf input file and url to be removed from the file."
-    usage
-    exit 1
-fi
+checkargs() {
+    if [ $# -ne 2 ]
+    then
+        echo "The script needs a pdf input file and url to be removed from the file."
+        usage
+        exit 1
+    fi
+
+}
 
 # check if qpdf and sed are installed
 CMD1="qpdf"
@@ -64,7 +67,7 @@ decompresspdf() {
 # remove the link from the decompressed pdf file
 cleanpdf() {
     echo "Removing the url $URL from the file $FILE"
-    $CMD2 's/"${URL}"/ /g' <$STAGE1.pdf >$STAGE2.pdf
+    $CMD2 -e "s/$URL/ /g" <$STAGE1.pdf >$STAGE2.pdf
     if [ $? -eq 0 ]
     then
         echo "Successfully removed the url from pdf file."
@@ -80,6 +83,7 @@ compresspdf() {
     "$CMD1" --stream-data=compress $STAGE2.pdf cleanedfile.pdf >& /dev/null
 }
 
+checkargs "$@"
 checkutils
 decompresspdf
 cleanpdf
