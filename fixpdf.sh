@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # This script tries to remove a link embedded on each page of a pdf file
-# version 0.1
+# version 0.2
 # Author: M. Ahsan
-# last updated 2017-05-27 1:55AM
+# last updated 2018-10-14 8:00PM EEST
 
 usage() {
     echo "Usage: $0 [inputfile] [url]"
