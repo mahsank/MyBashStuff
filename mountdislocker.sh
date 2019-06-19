@@ -56,8 +56,6 @@ unlockpartitions()
     if [ -n "$PARTNUMS" ]
     then
         PASSWORD=$1
-        #echo $PASSWORD
-        #echo $PARTNUMS
         Uid=$(/bin/stat -c '%u' $PWD)
         Gid=$(/bin/stat -c '%g' $PWD)
         for i in $PARTNUMS
