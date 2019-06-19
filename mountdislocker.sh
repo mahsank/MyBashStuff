@@ -58,16 +58,16 @@ unlockpartitions()
         PASSWORD=$1
         #echo $PASSWORD
         #echo $PARTNUMS
-        Uid=$(stat -c '%u' $PWD)
-        Gid=$(stat -c '%g' $PWD)
+        Uid=$(/bin/stat -c '%u' $PWD)
+        Gid=$(/bin/stat -c '%g' $PWD)
         for i in $PARTNUMS
         do
             if [ ! -d $PWD/Disks/$i -a ! -d /tmp/$i ]
             then
                     mkdir -p $PWD/Disks/$i /tmp/$i
             fi
-            dislocker-fuse -vV /dev/$i -u"$PASSWORD" -- /tmp/$i
-            mount -o umask=0022,gid=$Gid,uid=$Uid /tmp/$i/dislocker-file ${PWD}/Disks/$i/
+            /bin/dislocker-fuse -vV /dev/$i -u"$PASSWORD" -- /tmp/$i
+            /bin/mount -o umask=0022,gid=$Gid,uid=$Uid /tmp/$i/dislocker-file ${PWD}/Disks/$i/
             sleep 5
         done
     else
