@@ -6,7 +6,7 @@
 # the script below. The script is tested on Fedora 30 and is expected to work
 # on other distributions as well though no guarantees are provided.
 # Author: Muhammad Ahsan
-# Last updated: 2019-06-18 11:17 PM EEST
+# Last updated: 2019-06-19 10:50 PM EEST
 
 
 set -xv
