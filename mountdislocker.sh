@@ -9,7 +9,7 @@
 # Last updated: 2019-06-19 10:50 PM EEST
 
 
-set -xv
+#set -xv
 
 if [ $UID -ne 0 ]
 then
